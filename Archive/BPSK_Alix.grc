@@ -1,0 +1,907 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: amine
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [104, 16.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: alpha
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [784, 24.0]
+    rotation: 0
+    state: true
+- name: center_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '915000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 24.0]
+    rotation: 0
+    state: true
+- name: constellation
+  id: variable_constellation
+  parameters:
+    comment: ''
+    const_points: '[-1-1j, -1+1j, 1+1j, 1-1j]'
+    dims: '1'
+    normalization: digital.constellation.AMPLITUDE_NORMALIZATION
+    npwr: '1.0'
+    precision: '8'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 3, 2]'
+    type: bpsk
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 16.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 24.0]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '16'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 24.0]
+    rotation: 0
+    state: true
+- name: variable_channel
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: ''
+    label: ''
+    type: real
+    value: '0.005'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1416, 80.0]
+    rotation: 0
+    state: enabled
+- name: analog_random_uniform_source_x_0_0
+  id: analog_random_uniform_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maximum: '2'
+    maxoutbuf: '0'
+    minimum: '0'
+    minoutbuf: '0'
+    seed: '0'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [96, 288.0]
+    rotation: 0
+    state: true
+- name: blocks_message_debug_0_0_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: trace
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1192, 936.0]
+    rotation: 0
+    state: enabled
+- name: blocks_message_debug_0_0_0_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: trace
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1896, 928.0]
+    rotation: 0
+    state: enabled
+- name: blocks_message_strobe_0
+  id: blocks_message_strobe
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg: pmt.intern("0")
+    period: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [96, 728.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0.4'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 304.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0.4'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1632, 664.0]
+    rotation: 0
+    state: true
+- name: blocks_packed_to_unpacked_xx_0
+  id: blocks_packed_to_unpacked_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    bits_per_chunk: '8'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 648.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [728, 296.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1448, 656.0]
+    rotation: 0
+    state: enabled
+- name: blocks_unpacked_to_packed_xx_0
+  id: blocks_unpacked_to_packed_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    bits_per_chunk: '8'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1472, 968.0]
+    rotation: 0
+    state: enabled
+- name: blocks_unpacked_to_packed_xx_0_0_0
+  id: blocks_unpacked_to_packed_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    bits_per_chunk: '1'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 296.0]
+    rotation: 0
+    state: true
+- name: digital_constellation_decoder_cb_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: constellation
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1848, 664.0]
+    rotation: 0
+    state: true
+- name: digital_constellation_modulator_0_0_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: constellation
+    differential: 'True'
+    excess_bw: '0.35'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 280.0]
+    rotation: 0
+    state: true
+- name: digital_constellation_modulator_0_0_0_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: constellation
+    differential: 'True'
+    excess_bw: '0.35'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1200, 640.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "# Implementation of a channel monitor block in GNU Radio with Python\n\
+      # This script creates a block to determine if the channel is free for communication.\n\
+      \nfrom gnuradio import gr\nimport numpy as np\n\nclass ChannelMonitor(gr.sync_block):\n\
+      \    def __init__(self, frequency_mhz=0, bandwidth_hz=3000, sample_rate=32000,\
+      \ threshold=0.1):\n        \"\"\"\n        Initialize the Channel Monitor block.\n\
+      \        :param frequency_mhz: Center frequency in MHz to monitor for energy\
+      \ detection.\n        :param bandwidth_hz: Bandwidth in Hz to average energy\
+      \ over.\n        :param sample_rate: Sampling rate of the input signal.\n  \
+      \      :param threshold: Energy threshold to determine if the channel is busy.\n\
+      \        \"\"\"\n        gr.sync_block.__init__(\n            self,\n      \
+      \      name=\"ChannelMonitor\",  # Name of the block\n            in_sig=[np.complex64],\
+      \  # Raw signal input for FFT\n            out_sig=[np.float32]    # Output\
+      \ signal indicating if the channel is free (1) or busy (0)\n        )\n\n  \
+      \      self.frequency_mhz = frequency_mhz\n        self.bandwidth_hz = bandwidth_hz\n\
+      \        self.sample_rate = sample_rate\n        self.threshold = threshold\n\
+      \n    def work(self, input_items, output_items):\n        \"\"\"\n        Analyze\
+      \ the input signal to determine if the channel is free.\n        :param input_items:\
+      \ Samples for FFT-based channel sensing.\n        :param output_items: Output\
+      \ indicating if the channel is free (1) or busy (0).\n        \"\"\"\n     \
+      \   input_signal = input_items[0]\n        output_signal = output_items[0]\n\
+      \n        # Validate input length\n        if len(input_signal) == 0:\n    \
+      \        raise ValueError(\"Input signal is empty!\")\n\n        # Compute the\
+      \ FFT and magnitude\n        fft_size = len(input_signal)  # Use the length\
+      \ of the input signal\n        energy = np.abs(np.fft.fft(input_signal))\n \
+      \       freqs = np.fft.fftfreq(fft_size, d=1 / self.sample_rate)\n\n       \
+      \ # Calculate the bin index for the target frequency and bandwidth\n       \
+      \ center_frequency_hz = self.frequency_mhz * 1e6\n        if not (0 <= center_frequency_hz\
+      \ <= self.sample_rate / 2):\n            raise ValueError(f\"Frequency {self.frequency_mhz}\
+      \ MHz is out of range for the sample rate {self.sample_rate} Hz\")\n\n     \
+      \   half_bandwidth_bins = int((self.bandwidth_hz / 2) / (self.sample_rate /\
+      \ fft_size))\n        center_bin = int((center_frequency_hz / self.sample_rate)\
+      \ * fft_size)\n\n        # Ensure center_bin is within bounds\n        if center_bin\
+      \ >= fft_size:\n            center_bin = fft_size - 1\n\n        # Determine\
+      \ the range of bins to average over\n        start_bin = max(center_bin - half_bandwidth_bins,\
+      \ 0)\n        end_bin = min(center_bin + half_bandwidth_bins, fft_size - 1)\n\
+      \n        # Compute the average energy in the specified bandwidth\n        avg_energy\
+      \ = np.mean(energy[start_bin:end_bin + 1])\n\n        # Determine if the channel\
+      \ is free\n        if avg_energy < self.threshold:\n            #print(f\"[ChannelMonitor]\
+      \ Channel at {self.frequency_mhz} MHz (\xB1{self.bandwidth_hz/2} Hz) is FREE.\
+      \ Average Energy: {avg_energy}\")\n            output_signal[:] = 1.0  # Channel\
+      \ is free\n        else:\n            #print(f\"[ChannelMonitor] Channel at\
+      \ {self.frequency_mhz} MHz (\xB1{self.bandwidth_hz/2} Hz) is BUSY. Average Energy:\
+      \ {avg_energy}\")\n            output_signal[:] = 0.0  # Channel is busy\n\n\
+      \        return len(output_signal)\n"
+    affinity: ''
+    alias: ''
+    bandwidth_hz: '3000'
+    comment: ''
+    frequency_mhz: variable_channel
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    sample_rate: samp_rate
+    threshold: '2'
+  states:
+    _io_cache: '(''ChannelMonitor'', ''ChannelMonitor'', [(''frequency_mhz'', ''0''),
+      (''bandwidth_hz'', ''3000''), (''sample_rate'', ''32000''), (''threshold'',
+      ''0.1'')], [(''0'', ''complex'', 1)], [(''0'', ''float'', 1)], ''\n        Initialize
+      the Channel Monitor block.\n        :param frequency_mhz: Center frequency in
+      MHz to monitor for energy detection.\n        :param bandwidth_hz: Bandwidth
+      in Hz to average energy over.\n        :param sample_rate: Sampling rate of
+      the input signal.\n        :param threshold: Energy threshold to determine if
+      the channel is busy.\n        '', [''bandwidth_hz'', ''frequency_mhz'', ''sample_rate'',
+      ''threshold''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1056, 480.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import struct\nimport time\nimport random\nimport pmt\nimport json\n\
+      from queue import Queue\nfrom gnuradio import gr\n\ndef build_frame(src_mac,\
+      \ dst_mac, priority, data):\n    \"\"\"\n    Construit la trame MAC :\n    \
+      \  - src_mac: 6 octets\n      - dst_mac: 6 octets\n      - priority: 1 octet\
+      \ (0 ou 1)\n      - length: 2 octets (taille des donn\xE9es)\n      - data:\
+      \ N octets\n    \"\"\"\n    # s = string (bytes), B = unsigned char, H = unsigned\
+      \ short\n    length = len(data)\n    fmt_header = \"!IIBH\"  # ! = r\xE9seau\
+      \ (big-endian)\n    header = struct.pack(fmt_header, src_mac, dst_mac, priority,\
+      \ length)\n    print(header)\n    return header + data\n\ndef parse_frame(frame_bytes):\n\
+      \    \"\"\"\n    D\xE9code une trame MAC.\n    Retourne (src_mac, dst_mac, priority,\
+      \ data).\n    \"\"\"\n    fmt_header = \"!IIBH\"\n    header_size = struct.calcsize(fmt_header)\n\
+      \    header = frame_bytes[:header_size]\n    data = frame_bytes[header_size:]\n\
+      \n    src_mac, dst_mac, priority, length = struct.unpack(fmt_header, header)\n\
+      \    payload = data[:length]\n    return src_mac, dst_mac, priority, payload\n\
+      \nclass csma_ca_mac_block(gr.basic_block):\n    \"\"\"\n    Bloc CSMA/CA avec\
+      \ backoff exponentiel et priorit\xE9s pour GNU Radio.\n    \"\"\"\n    def __init__(self,\
+      \ \n                 mac_addr=1,   # MAC de ce noeud\n                 cw_min_low=8,\n\
+      \                 cw_min_high=4,\n                 cw_max=64,\n            \
+      \     ack_timeout=0.05,  # en secondes\n                 max_retries=3):\n \
+      \       gr.basic_block.__init__(\n            self,\n            name=\"csma_ca_mac_block\"\
+      ,\n            in_sig=None,\n            out_sig=None\n        )\n        \n\
+      \        # Adresse MAC de ce noeud\n        self.mac_addr = mac_addr\n     \
+      \   \n        # Param\xE8tres\n        self.cw_min_low = cw_min_low\n      \
+      \  self.cw_min_high = cw_min_high\n        self.cw_max = cw_max\n        self.ack_timeout\
+      \ = ack_timeout\n        self.max_retries = max_retries\n        \n        #\
+      \ \xC9tat interne\n        self.state = \"IDLE\"\n        self.current_frame\
+      \ = None\n        self.current_priority = 0\n        self.cw = cw_min_low\n\
+      \        self.retries = 0\n        \n        # File d'attente des paquets \xE0\
+      \ transmettre\n        self.tx_queue = Queue() \n        \n        # Canal occup\xE9\
+      \ ?\n        self.channel_busy = False\n        \n        # Timer pour le backoff\n\
+      \        self.backoff_remaining = 0\n        self.last_time = time.time()\n\
+      \        \n        # Ports de messages\n        self.message_port_register_in(pmt.intern(\"\
+      app_in\"))\n        self.message_port_register_in(pmt.intern(\"phy_in\"))\n\
+      \        self.message_port_register_in(pmt.intern(\"cs_in\"))  # Carrier Sense\
+      \ input\n        self.message_port_register_out(pmt.intern(\"phy_out\"))\n \
+      \       self.message_port_register_out(pmt.intern(\"app_out\"))\n\n        #\
+      \ Pour la clock de work\n        self.message_port_register_in(pmt.intern(\"\
+      clock\"))\n        self.set_msg_handler(pmt.intern(\"clock\"), self.general_work)\n\
+      \        \n        self.set_msg_handler(pmt.intern(\"app_in\"), self.handle_msg_in)\n\
+      \        self.set_msg_handler(pmt.intern(\"phy_in\"), self.handle_phy_in)\n\
+      \        self.set_msg_handler(pmt.intern(\"cs_in\"), self.handle_cs_in)\n\n\
+      \    def handle_msg_in(self, msg_pmt):\n        \"\"\"\n        Handler pour\
+      \ une nouvelle trame \xE0 \xE9mettre depuis la couche application\n        \"\
+      \"\"\n        try:\n            # Extraire les donn\xE9es du message PMT\n \
+      \           if pmt.is_pair(msg_pmt):\n                msg_str = pmt.to_python(pmt.cdr(msg_pmt))\n\
+      \                msg_dict = json.loads(msg_str)\n                if isinstance(msg_dict,\
+      \ dict):\n                    dst_mac = msg_dict.get(\"dst_mac\")\n        \
+      \            priority = msg_dict.get(\"priority\")\n                    data\
+      \ = msg_dict.get(\"data\")\n                    \n                    # Construire\
+      \ la trame MAC\n                    #frame = build_frame(self.mac_addr, dst_mac,\
+      \ priority, data)\n                    \n                    # Mettre en file\
+      \ d'attente\n                    self.tx_queue.put((msg_str, priority))\n  \
+      \                  \n                    # Si on est IDLE, traiter imm\xE9diatement\n\
+      \                    if self.state == \"IDLE\":\n                        self.process_next_packet()\n\
+      \        except Exception as e:\n            print(f\"Error in handle_msg_in:\
+      \ {e}\")\n    \n    def handle_new_frame(self, frame, priority):\n        \"\
+      \"\"\n        D\xE9marre la proc\xE9dure de transmission pour une nouvelle trame\n\
+      \        \"\"\"\n        if self.state == \"IDLE\":\n            self.current_frame\
+      \ = frame\n            self.current_priority = priority\n            self.retries\
+      \ = 0\n            # D\xE9finir la CW initiale selon la priorit\xE9\n      \
+      \      if priority == 1:\n                self.cw = self.cw_min_high\n     \
+      \       else:\n                self.cw = self.cw_min_low\n            # Passer\
+      \ en BACKOFF\n            self.state = \"BACKOFF\"\n            self.start_backoff()\n\
+      \    \n    def start_backoff(self):\n        \"\"\"\n        D\xE9marre la proc\xE9\
+      dure de backoff de mani\xE8re asynchrone\n        \"\"\"\n        # D\xE9terminer\
+      \ le backoff en slots\n        slots = random.randint(0, self.cw - 1)\n    \
+      \    self.backoff_remaining = slots * 0.001  # 1ms par slot\n        self.last_time\
+      \ = time.time()\n    \n    def tx_frame(self):\n        \"\"\"\n        Transmet\
+      \ une trame via le port PHY\n        \"\"\"\n        try:\n            # Cr\xE9\
+      er un vecteur PMT pour la trame\n            #blob = pmt.make_u8vector(len(self.current_frame),\
+      \ 0)\n            #for i, b in enumerate(self.current_frame):\n            \
+      \    #pmt.u8vector_set(blob, i, b)\n            \n            # Envoyer la trame\n\
+      \            self.message_port_pub(\n                pmt.intern(\"phy_out\"\
+      ),\n                pmt.cons(pmt.intern(\"frame\"), pmt.to_pmt(self.current_frame))#pmt.cons(pmt.intern(\"\
+      frame\"), blob)\n            )\n            \n            # Passer en attente\
+      \ d'ACK\n            self.state = \"WAIT_ACK\"\n            self.wait_ack_start_time\
+      \ = time.time()\n            \n        except Exception as e:\n            print(f\"\
+      Error in tx_frame: {e}\")\n            self.state = \"IDLE\"\n            self.process_next_packet()\n\
+      \    \n    def handle_phy_in(self, msg_pmt):\n        \"\"\"\n        R\xE9\
+      ception d'une trame depuis la PHY\n        \"\"\"\n        try:\n          \
+      \  if pmt.is_pair(msg_pmt):\n                blob = pmt.cdr(msg_pmt)\n     \
+      \           if pmt.is_u8vector(blob):\n                    # Convertir le PMT\
+      \ en bytes\n                    frame_bytes = bytes(pmt.u8vector_elements(blob))\n\
+      \                    \n                    # Parser la trame\n             \
+      \       src_mac, dst_mac, priority, payload = parse_frame(frame_bytes)\n   \
+      \                 \n                    # V\xE9rifier si c'est un ACK pour nous\n\
+      \                    if payload == b'ACK' and dst_mac == self.mac_addr:\n  \
+      \                      self.handle_rx_ack(src_mac)\n                    elif\
+      \ dst_mac == self.mac_addr or dst_mac == b'\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF':\n\
+      \                        # Trame de donn\xE9es pour nous ou broadcast\n    \
+      \                    # Remonter \xE0 la couche application\n               \
+      \         msg_dict = {\n                            \"src_mac\": src_mac,\n\
+      \                            \"priority\": priority,\n                     \
+      \       \"data\": payload\n                        }\n                     \
+      \   self.message_port_pub(\n                            pmt.intern(\"app_out\"\
+      ),\n                            pmt.cons(pmt.intern(\"rx_frame\"), pmt.to_pmt(msg_dict))\n\
+      \                        )\n        except Exception as e:\n            print(f\"\
+      Error in handle_phy_in: {e}\")\n    \n    def handle_rx_ack(self, ack_src_mac):\n\
+      \        \"\"\"\n        Traitement quand on re\xE7oit un ACK\n        \"\"\"\
+      \n        if self.state == \"WAIT_ACK\":\n            # Extract destination\
+      \ MAC from the current frame (bytes 6-12 in the frame)\n            _, dst_mac,\
+      \ _, _ = parse_frame(self.current_frame)\n            \n            # Verify\
+      \ ACK came from the intended recipient\n            if ack_src_mac == dst_mac:\n\
+      \                self.state = \"IDLE\"\n                self.current_frame =\
+      \ None\n                # Notifier le succ\xE8s\n                self.message_port_pub(\n\
+      \                    pmt.intern(\"app_out\"),\n                    pmt.cons(pmt.intern(\"\
+      tx_success\"), pmt.PMT_NIL)\n                )\n            else:\n        \
+      \        # If ACK came from wrong source, treat it as no ACK received\n    \
+      \            print(f\"Received ACK from unexpected source: {ack_src_mac}\")\n\
+      \                self.retries += 1\n                if self.retries < self.max_retries:\n\
+      \                    self.cw = min(self.cw * 2, self.cw_max)\n             \
+      \       self.state = \"BACKOFF\"\n                    self.start_backoff()\n\
+      \                else:\n                    self.state = \"IDLE\"\n        \
+      \            self.current_frame = None\n                    # Notifier l'\xE9\
+      chec\n                    self.message_port_pub(\n                        pmt.intern(\"\
+      app_out\"),\n                        pmt.cons(pmt.intern(\"tx_failed\"), pmt.PMT_NIL)\n\
+      \                    )\n                    # Traiter le paquet suivant dans\
+      \ la file\n                    self.process_next_packet()\n    \n    def handle_cs_in(self,\
+      \ msg_pmt):\n        \"\"\"\n        Gestion du Carrier Sense\n        \"\"\"\
+      \n        if pmt.is_bool(msg_pmt):\n            self.channel_busy = pmt.to_bool(msg_pmt)\n\
+      \    \n    def general_work(self, clk):\n        \"\"\"\n        M\xE9thode\
+      \ appel\xE9e r\xE9guli\xE8rement par le scheduler de GNU Radio\n        \"\"\
+      \"\n        now = time.time()\n        dt = now - self.last_time\n        self.last_time\
+      \ = now\n        \n        if self.state == \"BACKOFF\":\n            if not\
+      \ self.channel_busy:\n                self.backoff_remaining -= dt\n       \
+      \         if self.backoff_remaining <= 0:\n                    self.state =\
+      \ \"TX\"\n                    self.tx_frame()\n        \n        elif self.state\
+      \ == \"WAIT_ACK\":\n            if (now - self.wait_ack_start_time) > self.ack_timeout:\n\
+      \                self.retries += 1\n                if self.retries < self.max_retries:\n\
+      \                    self.cw = min(self.cw * 2, self.cw_max)\n             \
+      \       self.state = \"BACKOFF\"\n                    self.start_backoff()\n\
+      \                else:\n                    self.state = \"IDLE\"\n        \
+      \            self.current_frame = None\n                    # Notifier l'\xE9\
+      chec\n                    self.message_port_pub(\n                        pmt.intern(\"\
+      app_out\"),\n                        pmt.cons(pmt.intern(\"tx_failed\"), pmt.PMT_NIL)\n\
+      \                    )\n                    # Traiter le paquet suivant dans\
+      \ la file\n                    self.process_next_packet()\n        \n      \
+      \  return 0\n\n    def process_next_packet(self):\n        \"\"\"\n        Traite\
+      \ le prochain paquet dans la file d'attente\n        \"\"\"\n        if not\
+      \ self.tx_queue.empty() and self.state == \"IDLE\":\n            frame, priority\
+      \ = self.tx_queue.get()\n            self.handle_new_frame(frame, priority)\n\
+      \n    def stop(self):\n        \"\"\"\n        Optionnel : si vous avez besoin\
+      \ de nettoyer des ressources \xE0 l'arr\xEAt du flowgraph.\n        \"\"\"\n\
+      \        return super().stop()\n\nprint(\"fichier pr\xE9sent\")"
+    ack_timeout: '0.5'
+    affinity: ''
+    alias: ''
+    comment: ''
+    cw_max: '64'
+    cw_min_high: '4'
+    cw_min_low: '8'
+    mac_addr: '34'
+    max_retries: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: "('csma_ca_mac_block', 'csma_ca_mac_block', [('mac_addr', '1'), ('cw_min_low',\
+      \ '8'), ('cw_min_high', '4'), ('cw_max', '64'), ('ack_timeout', '0.05'), ('max_retries',\
+      \ '3')], [('cs_in', 'message', 1), ('clock', 'message', 1), ('phy_in', 'message',\
+      \ 1), ('app_in', 'message', 1)], [('app_out', 'message', 1), ('phy_out', 'message',\
+      \ 1)], '\\n    Bloc CSMA/CA avec backoff exponentiel et priorit\xE9s pour GNU\
+      \ Radio.\\n    ', ['ack_timeout', 'cw_max', 'cw_min_high', 'cw_min_low', 'mac_addr',\
+      \ 'max_retries'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 688.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2
+  id: epy_block
+  parameters:
+    _source_code: "import pmt\nfrom gnuradio import gr\nimport numpy as np\n\nclass\
+      \ float_to_bool_msg(gr.basic_block):\n    \"\"\"\n    Convertit un flux float32\
+      \ (0 ou 1) en messages bool\xE9ens (False ou True).\n    \"\"\"\n    def __init__(self):\n\
+      \        gr.basic_block.__init__(\n            self,\n            name=\"float_to_bool_msg\"\
+      ,\n            in_sig=[np.float32],  # un canal d'entr\xE9e float32\n      \
+      \      out_sig=[]                  # pas de flux de sortie\n        )\n    \
+      \    \n        # On d\xE9clare un port de sortie de message\n        self.message_port_register_out(pmt.intern(\"\
+      state_out\"))\n\n    def general_work(self, input_items, output_items):\n  \
+      \      in0 = input_items[0]\n        n = len(in0)\n        \n        # Pour\
+      \ chaque \xE9chantillon, on envoie un message\n        for val in in0:\n   \
+      \         if val >= 0.5:  # ou > 0.0 selon votre logique\n                msg\
+      \ = pmt.from_bool(False)\n            else:\n                msg = pmt.from_bool(True)\n\
+      \            \n            # Publier le message\n            self.message_port_pub(pmt.intern(\"\
+      state_out\"), msg)\n        \n        # Consommer tous les \xE9chantillons\n\
+      \        self.consume(0, n)\n        \n        return 0"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: "('float_to_bool_msg', 'float_to_bool_msg', [], [('0', 'float', 1)],\
+      \ [('state_out', 'message', 1)], '\\n    Convertit un flux float32 (0 ou 1)\
+      \ en messages bool\xE9ens (False ou True).\\n    ', [])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [160, 536.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_3
+  id: epy_block
+  parameters:
+    _source_code: "#!/usr/bin/env python3\nimport time\nimport random\nimport pmt\n\
+      from gnuradio import gr\nimport numpy as np\nimport json\n\nclass app_simulator(gr.basic_block):\n\
+      \    \"\"\"\n    Simulateur de la couche application qui envoie des donn\xE9\
+      es toutes les 30 secondes.\n    Les donn\xE9es sont envoy\xE9es au format attendu\
+      \ par le bloc CSMA/CA.\n    \"\"\"\n    def __init__(self, \n              \
+      \   interval=30.0,  # Intervalle entre les envois en secondes\n            \
+      \     dst_mac=b'\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF',  # Broadcast par d\xE9faut\n\
+      \                 min_size=10,    # Taille minimum des donn\xE9es en octets\n\
+      \                 max_size=100):  # Taille maximum des donn\xE9es en octets\n\
+      \        gr.basic_block.__init__(\n            self,\n            name=\"app_simulator\"\
+      ,\n            in_sig=None,\n            out_sig=None\n        )\n        \n\
+      \        self.interval = interval\n        self.dst_mac = dst_mac\n        self.min_size\
+      \ = min_size\n        self.max_size = max_size\n        \n        # Pour le\
+      \ timing\n        self.last_tx = time.time()\n\n        # Pour la clock de work\n\
+      \        self.message_port_register_in(pmt.intern(\"clock\"))\n        self.set_msg_handler(pmt.intern(\"\
+      clock\"), self.general_work)\n        \n        # Port de sortie vers la couche\
+      \ MAC\n        self.message_port_register_out(pmt.intern(\"app_out\"))\n   \
+      \     \n        # Port optionnel pour recevoir les acquittements\n        self.message_port_register_in(pmt.intern(\"\
+      app_in\"))\n        self.set_msg_handler(pmt.intern(\"app_in\"), self.handle_mac_feedback)\n\
+      \    \n    def handle_mac_feedback(self, msg_pmt):\n        \"\"\"\n       \
+      \ Traite les retours de la couche MAC (succ\xE8s/\xE9chec des transmissions)\n\
+      \        \"\"\"\n        if pmt.is_pair(msg_pmt):\n            key = pmt.symbol_to_string(pmt.car(msg_pmt))\n\
+      \            if key == \"tx_success\":\n                print(\"[APP] Transmission\
+      \ r\xE9ussie\")\n            elif key == \"tx_failed\":\n                print(\"\
+      [APP] \xC9chec de la transmission\")\n            elif key == \"rx_frame\":\n\
+      \                # Donn\xE9es re\xE7ues d'un autre n\u0153ud\n             \
+      \   data_dict = pmt.to_python(pmt.cdr(msg_pmt))\n                print(f\"[APP]\
+      \ Donn\xE9es re\xE7ues de {data_dict['src_mac']}: {data_dict['data']}\")\n \
+      \   \n    def generate_random_data(self):\n        \"\"\"\n        G\xE9n\xE8\
+      re des donn\xE9es al\xE9atoires de taille variable\n        \"\"\"\n       \
+      \ size = random.randint(self.min_size, self.max_size)\n        # Simuler des\
+      \ donn\xE9es de capteur (temp\xE9rature, humidit\xE9, etc.)\n        temp =\
+      \ round(random.uniform(15, 30), 2)\n        humidity = round(random.uniform(30,\
+      \ 80), 2)\n        data = f\"T{temp},H{humidity}\" #.encode('utf-8')\n     \
+      \   return data\n    \n    def general_work(self, clk):\n        \"\"\"\n  \
+      \      M\xE9thode appel\xE9e r\xE9guli\xE8rement par le scheduler de GNU Radio\n\
+      \        \"\"\"\n        now = time.time()\n        \n        # V\xE9rifier\
+      \ si c'est le moment d'envoyer\n        if (now - self.last_tx) >= self.interval:\n\
+      \            # G\xE9n\xE9rer des donn\xE9es\n            data = self.generate_random_data()\n\
+      \            \n            # Cr\xE9er le message pour la couche MAC\n      \
+      \      msg_dict = {\n                \"dst_mac\": self.dst_mac,\n          \
+      \      \"priority\": random.randint(0, 1),  # Priorit\xE9 al\xE9atoire\n   \
+      \             \"data\": data\n            }\n            msg_str = json.dumps(msg_dict)\n\
+      \            \n            # Convertir en PMT et envoyer\n            try:\n\
+      \                self.message_port_pub(\n                    pmt.intern(\"app_out\"\
+      ),\n                    pmt.cons(pmt.PMT_NIL, pmt.to_pmt(msg_str))\n       \
+      \         )\n                #print(f\"[APP] Envoi de donn\xE9es: {data}\")\n\
+      \            except Exception as e:\n                print(f\"[APP] Erreur lors\
+      \ de l'envoi: {e}\")\n            \n            self.last_tx = now\n       \
+      \ \n        return 0\n\nprint(\"fichier simu pr\xE9sent\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    dst_mac: '45'
+    interval: '5'
+    max_size: '100'
+    maxoutbuf: '0'
+    min_size: '10'
+    minoutbuf: '0'
+  states:
+    _io_cache: "('app_simulator', 'app_simulator', [('interval', '30.0'), ('dst_mac',\
+      \ \"b'\\\\xff\\\\xff\\\\xff\\\\xff\\\\xff\\\\xff'\"), ('min_size', '10'), ('max_size',\
+      \ '100')], [('clock', 'message', 1), ('app_in', 'message', 1)], [('app_out',\
+      \ 'message', 1)], '\\n    Simulateur de la couche application qui envoie des\
+      \ donn\xE9es toutes les 30 secondes.\\n    Les donn\xE9es sont envoy\xE9es au\
+      \ format attendu par le bloc CSMA/CA.\\n    ', ['dst_mac', 'interval', 'max_size',\
+      \ 'min_size'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 888.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_4
+  id: epy_block
+  parameters:
+    _source_code: "from gnuradio import gr\nimport pmt\nimport numpy as np\n\n\nclass\
+      \ pmt_to_ichar(gr.sync_block):\n    \"\"\"\n    Bloc GNU Radio pour transformer\
+      \ un message PMT en un flux d'entiers (int8)\n    \"\"\"\n\n    def __init__(self):\n\
+      \        gr.sync_block.__init__(\n            self,\n            name=\"PMT\
+      \ to Ichar\",\n            in_sig=[],\n            out_sig=[np.int8],\n    \
+      \    )\n        self.message_port_register_in(pmt.intern(\"in\"))\n        self.set_msg_handler(pmt.intern(\"\
+      in\"), self.handle_msg)\n        self.data_queue = bytearray()\n\n    def handle_msg(self,\
+      \ msg_pmt):\n        try:\n            # V\xE9rifier si le message PMT contient\
+      \ une cha\xEEne\n            if pmt.is_pair(msg_pmt):\n                msg_str\
+      \ = pmt.to_python(pmt.cdr(msg_pmt))\n                if isinstance(msg_str,\
+      \ str):\n                    self.data_queue.extend(msg_str.encode(\"utf-8\"\
+      ))\n        except Exception as e:\n            print(f\"Erreur dans handle_msg\
+      \ : {e}\")\n\n    def work(self, input_items, output_items):\n        out =\
+      \ output_items[0]\n        length = min(len(out), len(self.data_queue))\n  \
+      \      out[:length] = np.frombuffer(self.data_queue[:length], dtype=np.int8)\n\
+      \        self.data_queue = self.data_queue[length:]\n        return length\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('PMT to Ichar', 'pmt_to_ichar', [], [('in', 'message', 1)], [('0',
+      'byte', 1)], "\n    Bloc GNU Radio pour transformer un message PMT en un flux
+      d'entiers (int8)\n    ", [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 760.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5_0
+  id: epy_block
+  parameters:
+    _source_code: "from gnuradio import gr\nimport pmt\nimport numpy as np\nimport\
+      \ json\n\n\nclass ichar_to_pmt(gr.sync_block):\n    \"\"\"\n    Bloc GNU Radio\
+      \ pour transformer un flux d'entiers (int8) en un message PMT\n    \"\"\"\n\n\
+      \    def __init__(self):\n        gr.sync_block.__init__(\n            self,\n\
+      \            name=\"Ichar to PMT\",\n            in_sig=[np.int8],\n       \
+      \     out_sig=[],\n        )\n        self.message_port_register_out(pmt.intern(\"\
+      out\"))\n        self.data_buffer = bytearray()\n\n    def work(self, input_items,\
+      \ output_items):\n        in_data = input_items[0]\n\n        # Ajouter les\
+      \ donn\xE9es au tampon\n        self.data_buffer.extend(in_data)\n\n       \
+      \ # D\xE9coder les donn\xE9es si disponibles\n        try:\n            decoded_data\
+      \ = self.data_buffer.decode(\"utf-8\", errors=\"ignore\")\n            # Cr\xE9\
+      er un dictionnaire JSON\n            message_dict = {\"frame\": {\"dst_mac\"\
+      : 45, \"priority\": 1, \"data\": decoded_data}}\n            json_message =\
+      \ json.dumps(message_dict)\n\n            # Envoyer le message sous forme de\
+      \ PMT\n            msg_pmt = pmt.intern(json_message)\n            self.message_port_pub(pmt.intern(\"\
+      out\"), msg_pmt)\n\n            # R\xE9initialiser le tampon\n            self.data_buffer\
+      \ = bytearray()\n        except Exception as e:\n            print(f\"Erreur\
+      \ lors du d\xE9codage ou de l'envoi : {e}\")\n\n        return len(in_data)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Ichar to PMT', 'ichar_to_pmt', [], [('0', 'byte', 1)], [('out', 'message',
+      1)], "\n    Bloc GNU Radio pour transformer un flux d'entiers (int8) en un message
+      PMT\n    ", [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 992.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5_0_0
+  id: epy_block
+  parameters:
+    _source_code: "from gnuradio import gr\nimport pmt\nimport numpy as np\nimport\
+      \ json\n\n\nclass ichar_to_pmt(gr.sync_block):\n    \"\"\"\n    Bloc GNU Radio\
+      \ pour transformer un flux d'entiers (int8) en un message PMT\n    \"\"\"\n\n\
+      \    def __init__(self):\n        gr.sync_block.__init__(\n            self,\n\
+      \            name=\"Ichar to PMT\",\n            in_sig=[np.int8],\n       \
+      \     out_sig=[],\n        )\n        self.message_port_register_out(pmt.intern(\"\
+      out\"))\n        self.data_buffer = bytearray()\n\n    def work(self, input_items,\
+      \ output_items):\n        in_data = input_items[0]\n\n        # Ajouter les\
+      \ donn\xE9es au tampon\n        self.data_buffer.extend(in_data)\n\n       \
+      \ # D\xE9coder les donn\xE9es si disponibles\n        try:\n            decoded_data\
+      \ = self.data_buffer.decode(\"utf-8\", errors=\"ignore\")\n            # Cr\xE9\
+      er un dictionnaire JSON\n            message_dict = {\"frame\": {\"dst_mac\"\
+      : 45, \"priority\": 1, \"data\": decoded_data}}\n            json_message =\
+      \ json.dumps(message_dict)\n\n            # Envoyer le message sous forme de\
+      \ PMT\n            msg_pmt = pmt.intern(json_message)\n            self.message_port_pub(pmt.intern(\"\
+      out\"), msg_pmt)\n\n            # R\xE9initialiser le tampon\n            self.data_buffer\
+      \ = bytearray()\n        except Exception as e:\n            print(f\"Erreur\
+      \ lors du d\xE9codage ou de l'envoi : {e}\")\n\n        return len(in_data)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Ichar to PMT', 'ichar_to_pmt', [], [('0', 'byte', 1)], [('out', 'message',
+      1)], "\n    Bloc GNU Radio pour transformer un flux d'entiers (int8) en un message
+      PMT\n    ", [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1024, 848.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5_0_1
+  id: epy_block
+  parameters:
+    _source_code: "from gnuradio import gr\nimport pmt\nimport numpy as np\nimport\
+      \ json\n\n\nclass ichar_to_pmt(gr.sync_block):\n    \"\"\"\n    Bloc GNU Radio\
+      \ pour transformer un flux d'entiers (int8) en un message PMT\n    \"\"\"\n\n\
+      \    def __init__(self):\n        gr.sync_block.__init__(\n            self,\n\
+      \            name=\"Ichar to PMT\",\n            in_sig=[np.int8],\n       \
+      \     out_sig=[],\n        )\n        self.message_port_register_out(pmt.intern(\"\
+      out\"))\n        self.data_buffer = bytearray()\n\n    def work(self, input_items,\
+      \ output_items):\n        in_data = input_items[0]\n\n        # Ajouter les\
+      \ donn\xE9es au tampon\n        self.data_buffer.extend(in_data)\n\n       \
+      \ # D\xE9coder les donn\xE9es si disponibles\n        try:\n            decoded_data\
+      \ = self.data_buffer.decode(\"utf-8\", errors=\"ignore\")\n            # Cr\xE9\
+      er un dictionnaire JSON\n            message_dict = {\"frame\": {\"dst_mac\"\
+      : 45, \"priority\": 1, \"data\": decoded_data}}\n            json_message =\
+      \ json.dumps(message_dict)\n\n            # Envoyer le message sous forme de\
+      \ PMT\n            msg_pmt = pmt.intern(json_message)\n            self.message_port_pub(pmt.intern(\"\
+      out\"), msg_pmt)\n\n            # R\xE9initialiser le tampon\n            self.data_buffer\
+      \ = bytearray()\n        except Exception as e:\n            print(f\"Erreur\
+      \ lors du d\xE9codage ou de l'envoi : {e}\")\n\n        return len(in_data)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Ichar to PMT', 'ichar_to_pmt', [], [('0', 'byte', 1)], [('out', 'message',
+      1)], "\n    Bloc GNU Radio pour transformer un flux d'entiers (int8) en un message
+      PMT\n    ", [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1688, 976.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_random_uniform_source_x_0_0, '0', blocks_unpacked_to_packed_xx_0_0_0, '0']
+- [blocks_message_strobe_0, strobe, epy_block_1, clock]
+- [blocks_message_strobe_0, strobe, epy_block_3, clock]
+- [blocks_multiply_const_vxx_0_0_0, '0', epy_block_0, '0']
+- [blocks_multiply_const_vxx_0_0_0_0, '0', digital_constellation_decoder_cb_0, '0']
+- [blocks_packed_to_unpacked_xx_0, '0', digital_constellation_modulator_0_0_0_0, '0']
+- [blocks_packed_to_unpacked_xx_0, '0', epy_block_5_0_0, '0']
+- [blocks_throttle2_0, '0', blocks_multiply_const_vxx_0_0_0, '0']
+- [blocks_throttle2_0_0, '0', blocks_multiply_const_vxx_0_0_0_0, '0']
+- [blocks_unpacked_to_packed_xx_0, '0', epy_block_5_0_1, '0']
+- [blocks_unpacked_to_packed_xx_0_0_0, '0', digital_constellation_modulator_0_0_0,
+  '0']
+- [digital_constellation_decoder_cb_0, '0', blocks_unpacked_to_packed_xx_0, '0']
+- [digital_constellation_modulator_0_0_0, '0', blocks_throttle2_0, '0']
+- [digital_constellation_modulator_0_0_0_0, '0', blocks_throttle2_0_0, '0']
+- [epy_block_0, '0', epy_block_2, '0']
+- [epy_block_1, app_out, epy_block_3, app_in]
+- [epy_block_1, phy_out, blocks_message_debug_0_0_0, print]
+- [epy_block_1, phy_out, epy_block_4, in]
+- [epy_block_2, state_out, epy_block_1, cs_in]
+- [epy_block_3, app_out, epy_block_1, app_in]
+- [epy_block_4, '0', blocks_packed_to_unpacked_xx_0, '0']
+- [epy_block_4, '0', epy_block_5_0, '0']
+- [epy_block_5_0, out, blocks_message_debug_0_0_0, print]
+- [epy_block_5_0_0, out, blocks_message_debug_0_0_0, print]
+- [epy_block_5_0_1, out, blocks_message_debug_0_0_0_0, print]
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2
